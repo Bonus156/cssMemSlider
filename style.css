@@ -53,7 +53,8 @@
    .slider-nav .slider-nav-item {
      width: 1.5rem;
      height: 1.5rem;
-     border: 2px solid #fff;
+     border: 2px solid lightblue;
+     background-color: lightblue;
      border-radius: 50%;
      /* padding: 1em; */
      margin: 1em;
@@ -63,6 +64,7 @@
    
    .slider-nav .slider-nav-item:hover {
      background-color: #fff;
+     border-color: #fff;
    }
    .slider-nav .slider-nav-item:active {
      background-color: #000;
@@ -75,8 +77,9 @@
    .text-block {
     position: relative;
     overflow: hidden;
+    padding: 1.2em 0;
     max-width: 70vw;
-    height: auto;
+    height: 3em;
    }
 
    .item-text {
@@ -87,6 +90,9 @@
     padding-top: 1em;
     display: flex;
     
+  }
+  .text-block {
+    transform: translate(0, 0);
   }
    
    
@@ -111,6 +117,22 @@
    #slide3:checked  ~ .slider .text-nav-block .slider-nav .item3,
    #slide4:checked  ~ .slider .text-nav-block .slider-nav .item4 {
     background-color: #000;
+  }
+
+  #slide1:checked ~ .slider .text-nav-block .text-block .text1 {
+    transform: translate(0, 0);
+  }
+      
+  #slide2:checked ~ .slider .text-nav-block .text-block .text1 {
+    transform: translate(0, -2em);
+  }
+     
+  #slide3:checked ~ .slider .text-nav-block .text-block .text1 {
+    transform: translate(0, -4em)
+  }
+    
+  #slide4:checked ~ .slider .text-nav-block .text-block .text1 {
+    transform: translate(0, -6em);
   }
 
    
