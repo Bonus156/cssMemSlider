@@ -6,7 +6,7 @@
    
    body {
     position: relative;
-    background-color: #000;
+    background-color: #5e5e5e;
    }
    .wrapper {
      position: relative;
@@ -20,7 +20,7 @@
    .slider {
      position: relative;
      overflow: hidden;
-     max-width: 900px;
+     max-width: 39em;
      height: auto;
    }
    .slider-items {
@@ -36,25 +36,26 @@
    .slider-items .item img {
      max-width: 100%;
      height: auto;
+     border-radius: 2%;
    }
    
-   .slider-items input {
+   .wrapper input {
      position: absolute;
      visibility: hidden;
    }
    .slider-nav {
-     position: absolute;
-     bottom: 25px;
+     
      width: 100%;
      display: flex;
      justify-content: flex-end;
    }
-   
+   .nav-div .slider-nav-item,
    .slider-nav .slider-nav-item {
      width: 1.5rem;
      height: 1.5rem;
      border: 2px solid #fff;
      border-radius: 50%;
+     /* padding: 1em; */
      margin: 1em;
      cursor: pointer;
      transition: all .5s ease;
@@ -63,19 +64,69 @@
    .slider-nav .slider-nav-item:hover {
      background-color: #fff;
    }
+   .slider-nav .slider-nav-item:active {
+     background-color: #000;
+   }
+
+   .text-nav-block {
+       display: flex;
+       justify-content: space-between;
+   }
+   .text-block {
+    position: relative;
+    overflow: hidden;
+    max-width: 70vw;
+    height: auto;
+   }
+
+   .item-text {
+    color: #fff;
+    font-size: 1.5em;
+  }
+  .text-nav-block {
+    padding-top: 1em;
+    display: flex;
+    
+  }
    
-   #slide1:checked ~ .slide1 {
+   
+   #slide1:checked ~ .slider .slider-items .slide1 {
      margin-left: 0;
    }
-   
-   #slide2:checked ~ .slide1 {
+       
+   #slide2:checked ~ .slider .slider-items  .slide1 {
      margin-left: -25%;
    }
-   
-   #slide3:checked ~ .slide1 {
+      
+   #slide3:checked ~ .slider .slider-items  .slide1 {
      margin-left: -50%;
    }
-   
-   #slide4:checked ~ .slide1 {
+     
+   #slide4:checked ~ .slider .slider-items  .slide1 {
      margin-left: -75%;
+   }
+
+   #slide1:checked  ~ .slider .text-nav-block .slider-nav .item1,
+   #slide2:checked  ~ .slider .text-nav-block .slider-nav .item2,
+   #slide3:checked  ~ .slider .text-nav-block .slider-nav .item3,
+   #slide4:checked  ~ .slider .text-nav-block .slider-nav .item4 {
+    background-color: #000;
+  }
+
+   
+   
+   
+   
+   @media (max-width: 639px) {
+    .text-nav-block {
+        flex-direction: column-reverse;
+    }
+
+    .slider-nav {
+        justify-content: center;
+      }
+
+
+     
+   
    }
