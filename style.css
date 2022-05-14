@@ -15,13 +15,16 @@
      display: flex;
      justify-content: center;
      align-items: center;
+     
    }
    
    .slider {
      position: relative;
      overflow: hidden;
      max-width: 39em;
+     width: 90%;
      height: auto;
+     justify-content: center;
    }
    .slider-items {
      width: 400%;
@@ -45,19 +48,19 @@
    }
    .slider-nav {
      
-     width: 100%;
+     width: 30%;
      display: flex;
      justify-content: flex-end;
    }
    .nav-div .slider-nav-item,
    .slider-nav .slider-nav-item {
-     width: 1.5rem;
-     height: 1.5rem;
+     width: 1em;
+     height: 1em;
      border: 2px solid lightblue;
      background-color: lightblue;
      border-radius: 50%;
      /* padding: 1em; */
-     margin: 1em;
+     margin: .5em;
      cursor: pointer;
      transition: all .5s ease;
    }
@@ -67,9 +70,10 @@
      border-color: #fff;
    }
    .slider-nav .slider-nav-item:active {
-     background-color: #000;
+     background-color: #858585;
    }
 
+ 
    .text-nav-block {
        display: flex;
        justify-content: space-between;
@@ -77,14 +81,17 @@
    .text-block {
     position: relative;
     overflow: hidden;
-    padding: 1.2em 0;
-    max-width: 70vw;
-    height: 3em;
+    padding: 0; 
+    width: 70%;
+    height: 2em;
+    font-family: Arial;
    }
 
    .item-text {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1em;
+    padding: 0.4em 0;
+    transition: all .5s ease;
   }
   .text-nav-block {
     padding-top: 1em;
@@ -92,8 +99,10 @@
     
   }
   .text-block {
-    transform: translate(0, 0);
+    transform: translate(0, 0.3em);
   }
+
+  
    
    
    #slide1:checked ~ .slider .slider-items .slide1 {
@@ -119,36 +128,37 @@
     background-color: #000;
   }
 
-  #slide1:checked ~ .slider .text-nav-block .text-block .text1 {
+  #slide1:checked ~ .slider .text-nav-block .text-block .item-text {
     transform: translate(0, 0);
   }
       
-  #slide2:checked ~ .slider .text-nav-block .text-block .text1 {
+  #slide2:checked ~ .slider .text-nav-block .text-block .item-text {
     transform: translate(0, -2em);
   }
      
-  #slide3:checked ~ .slider .text-nav-block .text-block .text1 {
+  #slide3:checked ~ .slider .text-nav-block .text-block .item-text {
     transform: translate(0, -4em)
   }
     
-  #slide4:checked ~ .slider .text-nav-block .text-block .text1 {
+  #slide4:checked ~ .slider .text-nav-block .text-block .item-text {
     transform: translate(0, -6em);
   }
 
-   
-   
-   
-   
+
    @media (max-width: 639px) {
     .text-nav-block {
         flex-direction: column-reverse;
+        width: 100%;
     }
 
     .slider-nav {
+        width: 100%;
         justify-content: center;
-      }
+    }
 
-
-     
-   
-   }
+     .text-block {
+    width: 100%;
+    
+    }
+  
+    }
